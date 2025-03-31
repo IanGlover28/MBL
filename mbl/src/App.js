@@ -82,7 +82,7 @@ const App = () => {
     animate={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.8 }}
   >
-    <h1 className="f2 f-headline-l f1-l fw7 white font-serif">Marine Broadlink Agency</h1>
+    <h1 className="f2 f-headline-l f1-l fw7 white font-serif">Marine Broadlink Ghana</h1>
     <p className="f5 f4-l white-80">Your trusted Ghanaian custom agency to partner for smooth and secure Services.</p>
     <div className="flex justify-center">
       <motion.a
