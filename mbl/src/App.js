@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Facebook,  Instagram, } from "lucide-react";
 import { FaTiktok, FaWhatsapp } from "react-icons/fa";
 import ScrollFloat from './ScrollFloat';
 import "tachyons";
 import { motion } from "framer-motion";
-// import image7 from "./images/image7.jpg";
-// import image6 from "./images/image6.jpg";
+
 import image0 from "./images/image0.jpg";
 import air from "./images/air.jpg";
 import sea from "./images/sea.jpg";
@@ -82,8 +82,8 @@ const App = () => {
     animate={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.8 }}
   >
-    <h1 className="f2 f-headline-l f1-l fw7 white font-serif">Marine Broadlink Logistics</h1>
-    <p className="f5 f4-l white-80">Your trusted GHANA custom agents to partner for smooth and secure clearing services.</p>
+    <h1 className="f2 f-headline-l f1-l fw7 white font-serif">Marine Broadlink Agency</h1>
+    <p className="f5 f4-l white-80">Your trusted Ghanaian custom agency to partner for smooth and secure Services.</p>
     <div className="flex justify-center">
       <motion.a
         href="#services"
@@ -95,10 +95,10 @@ const App = () => {
       </motion.a>
     </div>
       {/* Three Features with Spacing */}
-      <div className="mt4 flex flex-row items-start gap">
-        <p className="f5 white-70 mb3">✔️ High Reliability</p>
-        <p className="f5 white-70 mb3">🌍 Global Coverage</p>
-        <p className="f5 white-70">⚡ Faster Response</p>
+      <div className="mt4 flex flex-row items-start gap-4 justify-center">
+        <p className="f5 white-70 mb3 ">✔️ High Reliability</p>
+        <p className="f5 white-70 mb3 ml3">🌍 Global Coverage</p>
+        <p className="f5 white-70 ml3">⚡ Faster Response</p>
       </div>
   </motion.div>
 
@@ -113,10 +113,11 @@ const App = () => {
   <h2 className="f2 mb4">Our Services</h2>
   <div className="flex flex-wrap justify-center w-100">
     {[
-      { name: "Freight Forwarding", desc: "We offer various freight forwarding options for efficient logistics." },
+      
       { name: "Customs Clearance", desc: "Streamline Your Imports with Hassle-Free Custom Clearing Services" },
-     
+      { name: "Freight Forwarding", desc: "We offer various freight forwarding options for efficient logistics." },
       { name: "Product Registration", desc: "Getting your products registered can be a complex and time-consuming process, but we make it fast, hassle-free, and fully compliant with all regulatory requirements." },
+      { name: "Consultation", desc: "Expert advice on clearing, forwarding, and logistics strategies.📞 Contact us now for a free consultation! 🚀" },
       { name: "Consultation", desc: "Expert advice on clearing, forwarding, and logistics strategies.📞 Contact us now for a free consultation! 🚀" }
     ].map((service, index) => (
       <motion.div
@@ -183,9 +184,7 @@ const App = () => {
   <div className="w-100 w-50-ns ph3">
     <h2 className="f2 fw7">About Us</h2>
     <p className="f4 black-80 lh-copy">
-      We are a leading clearing agency with years of experience in providing seamless customs clearance, 
-      freight forwarding, and warehousing solutions. Our team ensures efficiency and reliability for all 
-      your logistics needs.
+    Marine Broadlink Logistics Ghana is a premier clearing and logistics company established in 2023, dedicated to providing seamless customs clearing, freight forwarding, product registration, and consultation services in Ghana. With a commitment to efficiency, compliance, and customer satisfaction, we help businesses and individuals navigate the complexities of import and export regulations with ease. Our expert team ensures swift clearance, cost-effective shipping solutions, and hassle-free product registration, making us the trusted partner for all your logistics needs. Whether by air, sea, or land, Marine Broadlink Logistics Ghana delivers excellence at every step.
     </p>
   </div>
 
@@ -237,7 +236,9 @@ const App = () => {
   scrollEnd='bottom bottom-=40%'
   stagger={0.03}
 >
-  Fast, Reliable, and Hassle-Free Customs Clearing – Your Cargo, Our Priority!
+  <span className="f5 f4-l">
+    Fast, Reliable, and Hassle-Free Customs Clearing – Your Cargo, Our Priority!
+  </span>
 </ScrollFloat>
 
 
@@ -300,7 +301,9 @@ style={{
         &copy; 2023 Marine Broadlink Logistics. All Rights Reserved.
       </div>
     </footer>
+    <SpeedInsights />
     </div>
+    
   );
 };
 
