@@ -13,6 +13,7 @@ import air from "./images/air.jpg";
 import sea from "./images/sea.jpg";
 import logo from "./images/logo.png";
 import land from "./images/land.jpg";
+
 import intermodal from "./images/intermodal.jpg"
 
 
@@ -140,7 +141,7 @@ const App = () => {
   <div className="flex flex-wrap justify-center w-100">
     {[
       
-      { name: "Customs Clearance", desc: "Streamline Your Imports with Hassle-Free Custom Clearing Services" },
+      { name: "Customs Clearance", desc: " Our Customs Clearing service ensures a smooth and hassle-free process for importing and exporting goods. We handle all documentation, duty payments, and compliance with Ghana Revenue Authority (GRA) regulations, ensuring your shipments are cleared efficiently without delays." },
       { name: "Freight Forwarding", desc: "We offer various freight forwarding options for efficient logistics." },
       { name: "Product Registration", desc: "Getting your products registered can be a complex and time-consuming process, but we make it fast, hassle-free, and fully compliant with all regulatory requirements." },
       { name: "Business Registration", desc: "Assisting entrepreneurs in registering their businesses with the Registrar General's Department." },
@@ -148,7 +149,7 @@ const App = () => {
     ].map((service, index) => (
       <motion.div
         key={index}
-        className="w-100 w-50-m w-30-l pa3"
+        className={`pa3 ${service.name === "Freight Forwarding" ? "w-100 w-60-l" : "w-100 w-30-l"}`}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -208,11 +209,21 @@ const App = () => {
       <section id="about" className="flex flex-column flex-row-ns items-center justify-center w-100 ph3 pv5 bg-washed-yellow">
   {/* Left: Company Summary */}
   <div className="w-100 w-50-ns ph3">
-    <h2 className="f2 fw7">About Us</h2>
-    <p className="f4 black-80 lh-copy">
-    Marine Broadlink Logistics Ghana is a clearing company established in 2023, providing services such as customs clearing, freight forwarding, product registration, consultation, and business registration in Ghana. The company ensures efficient and compliant logistics solutions tailored to businesses and individuals involved in import and export.
-    </p>
-  </div>
+  <h2 className="f2 fw7 mb3">About Us</h2>
+  <p className="f4 black-80 lh-copy">
+    Marine Broadlink Logistics Ghana is a trusted clearing company established in 2023. We specialize in providing comprehensive logistics solutions, including:
+  </p>
+  
+
+  <h3 className="f3 fw6 mt4">Why Choose Us?</h3>
+  <ul className="f4 black-80 lh-copy pl3">
+    <li className="mb2"><strong>Expertise & Efficiency:</strong> A skilled team ensuring fast and hassle-free logistics.</li>
+    <li className="mb2"><strong>Compliance & Transparency:</strong> Adherence to all regulatory requirements.</li>
+    <li className="mb2"><strong>Customer-Centric Approach:</strong> Tailored services to meet unique business needs.</li>
+    <li className="mb2"><strong>Reliable Network:</strong> Strong partnerships for seamless global freight forwarding.</li>
+  </ul>
+</div>
+
 
   {/* Right: Image Slideshow */}
   <div className="w-100 w-50-ns flex justify-center mt4 mt0-ns">
@@ -252,7 +263,13 @@ const App = () => {
     </div>
 
     {/* Right Image */}
-    
+    {/* <div className="w-100 w-50-ns flex justify-center">
+      <img
+        src={emailIcon} 
+        alt="Logistics Insights"
+        className="w-80 br3 shadow-4"
+      />
+    </div> */}
   </div>
 </section>
 
