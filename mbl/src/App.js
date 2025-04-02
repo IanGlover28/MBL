@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { SpeedInsights } from "@vercel/speed-insights/react"
+
 import { Facebook,  Instagram, } from "lucide-react";
 import { FaTiktok, FaWhatsapp } from "react-icons/fa";
 import ScrollFloat from './ScrollFloat';
+import Chatbot from "./Chatbot";
+
 import "tachyons";
 import { motion } from "framer-motion";
 
@@ -12,6 +14,7 @@ import sea from "./images/sea.jpg";
 import logo from "./images/logo.png";
 import land from "./images/land.jpg";
 import intermodal from "./images/intermodal.jpg"
+
 
 const images = [
   require("./images/image1.jpg"),
@@ -24,13 +27,23 @@ const images = [
 const NavLink = ({ label }) => {
   return (
     <div>
-    <a className="link dim black f5 mh3" href={`#${label.toLowerCase()}`}>{label}</a>
+    <button className="dib white mx-20 bg-light-blue pa2 ma2 br-pill grow shadow-3">
+      <a href={`#${label.toLowerCase()}`} className=" white no-underline ">
+        {label}
+      </a>
+    </button>
   </div>
+  
   );
 };
 
+
+
 const App = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
+ 
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,17 +65,29 @@ const App = () => {
   }}
 >
   <img src={logo} alt="Company Logo" className="br3 w3 w4-ns" />
-  <div className="dn flex-ns">
-    {["Home", "Services", "About", "Contact"].map((label, index) => (
-      <NavLink key={index} label={label} />
-    ))}
-  </div>
-  <div className="db dn-ns">
-    <button className="bg-transparent bn pointer">
-      {/* Hamburger Icon */}
-      ☰
-    </button>
-  </div>
+  <div className="dn flex-ns hidden md:flex space-x-6 ">
+  {["Home", "Services", "About", "Contact"].map((label, index) => (
+    <NavLink key={index} label={label}  />
+  ))}
+</div>
+
+<div className="db dn-ns">
+<button
+        className="md:hidden bg-transparent border-none cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-200 px-4 py-2 rounded-lg"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? "✖" : "☰"}
+      </button>
+       {/* Mobile Dropdown Menu */}
+       {menuOpen && (
+        <div className="absolute top-16 left-0 w-full bg-white shadow-lg flex flex-col items-center space-y-2 py-4 transition-all duration-300 rounded-b-xl md:hidden">
+          {["Home", "Services", "About", "Contact"].map((label) => (
+            <NavLink key={label} label={label} />
+          ))}
+        </div>
+      )}
+</div>
+
 </nav>
 
 
@@ -83,11 +108,11 @@ const App = () => {
     transition={{ duration: 0.8 }}
   >
     <h1 className="f2 f-headline-l f1-l fw7 white font-serif">Marine Broadlink Ghana</h1>
-    <p className="f5 f4-l white-80">Your trusted Ghanaian custom agency to partner for smooth and secure Services.</p>
+    <p className="f5 f4-l fw5 white-80">Your trusted Ghanaian custom agency to partner for smooth and secure Services.</p>
     <div className="flex justify-center">
       <motion.a
         href="#services"
-        className="dib white bg-dark-blue pa3 br-pill grow shadow-3 no-underline"
+        className="dib white bg-blue pa3 br-pill grow shadow-3 no-underline"
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.5 }}
       >
@@ -219,9 +244,12 @@ const App = () => {
         Subscribe to our monthly market updates and get invited to exclusive webinars where our 
         Freight Forwarding Experts answer all your questions on global trade.
       </p>
-      <button className="bg-white blue pv3 ph4 br-pill f5 b dim pointer">
+      <button className="bg-blue white pv3 ph4 br-pill f5 b dim pointer">
         Subscribe
       </button>
+      <div className="w-100 w-50-l flex justify-center mt4 mt0-l">
+    <img className="w-80 br3 shadow-4" />
+  </div>
     </div>
 
     {/* Right Image */}
@@ -301,7 +329,8 @@ style={{
         &copy; 2023 Marine Broadlink Logistics. All Rights Reserved.
       </div>
     </footer>
-    <SpeedInsights />
+
+    <Chatbot />
     </div>
     
   );
