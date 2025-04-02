@@ -27,7 +27,7 @@ const images = [
 const NavLink = ({ label }) => {
   return (
     <div>
-    <button className="dib white mx-20 bg-light-blue pa2 ma2 br-pill grow shadow-3">
+    <button className="dib white mx-20 bg-blue pa2 ma2 br-pill grow shadow-3">
       <a href={`#${label.toLowerCase()}`} className=" white no-underline ">
         {label}
       </a>
@@ -111,12 +111,13 @@ const App = () => {
     <p className="f5 f4-l fw5 white-80">Your trusted Ghanaian custom agency to partner for smooth and secure Services.</p>
     <div className="flex justify-center">
       <motion.a
-        href="#services"
+      href="tel:+233542119400"
         className="dib white bg-blue pa3 br-pill grow shadow-3 no-underline"
+        
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.5 }}
       >
-        Explore Our Services
+        📞Call US
       </motion.a>
     </div>
       {/* Three Features with Spacing */}
@@ -142,8 +143,8 @@ const App = () => {
       { name: "Customs Clearance", desc: "Streamline Your Imports with Hassle-Free Custom Clearing Services" },
       { name: "Freight Forwarding", desc: "We offer various freight forwarding options for efficient logistics." },
       { name: "Product Registration", desc: "Getting your products registered can be a complex and time-consuming process, but we make it fast, hassle-free, and fully compliant with all regulatory requirements." },
-      { name: "Consultation", desc: "Expert advice on clearing, forwarding, and logistics strategies.📞 Contact us now for a free consultation! 🚀" },
-      { name: "Consultation", desc: "Expert advice on clearing, forwarding, and logistics strategies.📞 Contact us now for a free consultation! 🚀" }
+      { name: "Business Registration", desc: "Assisting entrepreneurs in registering their businesses with the Registrar General's Department." },
+      { name: "Consultation", desc: "Expert advice on clearing, forwarding, and logistics strategies.📞 Contact us now for a free consultation! " }
     ].map((service, index) => (
       <motion.div
         key={index}
@@ -209,7 +210,7 @@ const App = () => {
   <div className="w-100 w-50-ns ph3">
     <h2 className="f2 fw7">About Us</h2>
     <p className="f4 black-80 lh-copy">
-    Marine Broadlink Logistics Ghana is a premier clearing and logistics company established in 2023, dedicated to providing seamless customs clearing, freight forwarding, product registration, and consultation services in Ghana. With a commitment to efficiency, compliance, and customer satisfaction, we help businesses and individuals navigate the complexities of import and export regulations with ease. Our expert team ensures swift clearance, cost-effective shipping solutions, and hassle-free product registration, making us the trusted partner for all your logistics needs. Whether by air, sea, or land, Marine Broadlink Logistics Ghana delivers excellence at every step.
+    Marine Broadlink Logistics Ghana is a clearing company established in 2023, providing services such as customs clearing, freight forwarding, product registration, consultation, and business registration in Ghana. The company ensures efficient and compliant logistics solutions tailored to businesses and individuals involved in import and export.
     </p>
   </div>
 
@@ -247,9 +248,7 @@ const App = () => {
       <button className="bg-blue white pv3 ph4 br-pill f5 b dim pointer">
         Subscribe
       </button>
-      <div className="w-100 w-50-l flex justify-center mt4 mt0-l">
-    <img className="w-80 br3 shadow-4" />
-  </div>
+      
     </div>
 
     {/* Right Image */}
