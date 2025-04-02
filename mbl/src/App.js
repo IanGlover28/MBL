@@ -117,7 +117,7 @@ const App = () => {
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.5 }}
       >
-        📞Call US
+        📞Call Us
       </motion.a>
     </div>
       {/* Three Features with Spacing */}
