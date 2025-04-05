@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 import image0 from "./images/image0.jpg";
 import air from "./images/air.jpg";
 import sea from "./images/sea.jpg";
-import logo from "./images/logo.png";
+import logo1 from "./images/logo1.png";
 import land from "./images/land.jpg";
 
 import intermodal from "./images/intermodal.jpg"
@@ -28,7 +28,7 @@ const images = [
 const NavLink = ({ label }) => {
   return (
     <div>
-    <button className="dib white mx-20 bg-blue pa2 ma2 br-pill grow shadow-3">
+    <button className="dib white mx-20 bg-blue flex flex-col pa2 ma2 br-pill grow shadow-3">
       <a href={`#${label.toLowerCase()}`} className=" white no-underline ">
         {label}
       </a>
@@ -62,10 +62,10 @@ const App = () => {
   style={{
     borderRadius: "20px",
     backdropFilter: "blur(10px)",
-    background: "rgba(255, 255, 255, 0.5)",
+    // background: "rgba(255, 255, 255, 0.5)",
   }}
 >
-  <img src={logo} alt="Company Logo" className="br3 w3 w4-ns" />
+  <img src={logo1} alt="Company Logo" className="br3 w3 w4-ns" />
   <div className="dn flex-ns hidden md:flex space-x-6 ">
   {["Home", "Services", "About", "Contact"].map((label, index) => (
     <NavLink key={index} label={label}  />
@@ -81,7 +81,7 @@ const App = () => {
       </button>
        {/* Mobile Dropdown Menu */}
        {menuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white shadow-lg flex flex-col items-center space-y-2 py-4 transition-all duration-300 rounded-b-xl md:hidden">
+        <div className="absolute top-16 left-0 w-full bg-transparent shadow-lg flex flex-col items-center space-y-4 py-4 transition-all duration-300 rounded-b-xl md:hidden">
           {["Home", "Services", "About", "Contact"].map((label) => (
             <NavLink key={label} label={label} />
           ))}
@@ -312,6 +312,7 @@ const App = () => {
     ></iframe>
   </div>
 </section>
+
 <footer className=" w-100 white pv4 ph3 ph5-l"
 style={{
     background: "linear-gradient(135deg, #1E3A8A, #3B82F6)",
@@ -320,7 +321,7 @@ style={{
       <div className="flex flex-column flex-row-l items-center justify-between">
         {/* Logo */}
         <div className="w-100 w-30-l flex justify-center justify-start-l mb3 mb0-l">
-          <img src={logo} alt="Company Logo" className="w3" />
+          <img src={logo1} alt="Company Logo" className="w4" />
         </div>
 
         {/* Social Icons */}
