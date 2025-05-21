@@ -28,7 +28,7 @@ const images = [
 const NavLink = ({ label }) => {
   return (
     <div>
-    <button className="dib white mx-20 bg-blue flex flex-col pa2 ma2 br-pill grow shadow-3">
+    <button className="dib white mx-10 bg-blue flex flex-col pa2 ma2 br-pill grow shadow-3">
       <a href={`#${label.toLowerCase()}`} className=" white no-underline ">
         {label}
       </a>
